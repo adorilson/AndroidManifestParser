@@ -15,11 +15,12 @@ public class Main {
 		//AndroidManifest manifest = AndroidManifest.getManifestFromAPK(filePath);
 		
 		System.out.println("PackageName: " + manifest.getPackageName());
-		/*
+		
 		if (manifest.getUsesSdk()!=null){
 			System.out.println("MinSdkVersion: " + manifest.getUsesSdk().getMinSdkVersion());
 			System.out.println("TargetSdkVersion: " + manifest.getUsesSdk().getTargetSdkVersion());
 		}
+		/*
 		System.out.println("Label: " + manifest.getApplication().getLabel());
 		
 		System.out.println("Activities: " + manifest.getApplication().getActivities());

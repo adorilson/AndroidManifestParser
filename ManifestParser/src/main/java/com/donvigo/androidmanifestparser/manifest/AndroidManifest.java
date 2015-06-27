@@ -20,6 +20,8 @@ public class AndroidManifest {
     private String packageName;
     @Element(name = "application")
     private ApplicationEntry application;
+    @Element(name = "uses-sdk", required = false)
+    private UsesSdkEntry usesSdk;
     private boolean isLauncher;
 
     public boolean isLauncher() {
@@ -45,6 +47,14 @@ public class AndroidManifest {
     public void setApplication(ApplicationEntry application) {
         this.application = application;
     }
+    
+    public UsesSdkEntry getUsesSdk() {
+		return usesSdk;
+	}
+
+	public void setUsesSdk(UsesSdkEntry usesSdk) {
+		this.usesSdk = usesSdk;
+	}
     
     public static AndroidManifest getManifestFromXML(String pathToFile){
 		String manifestXmlString = null;
