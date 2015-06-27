@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import com.donvigo.androidmanifestparser.manifest.ActivityEntry;
 import com.donvigo.androidmanifestparser.manifest.AndroidManifest;
+import com.donvigo.androidmanifestparser.manifest.ApplicationEntry;
 
 public class Main {
 
@@ -21,14 +22,22 @@ public class Main {
 			System.out.println("TargetSdkVersion: " + manifest.getUsesSdk().getTargetSdkVersion());
 		}
 		
-		System.out.println("Label: " + manifest.getApplication().getLabel());
+		ApplicationEntry application = manifest.getApplication();
 		
-		System.out.println("Activities: " + manifest.getApplication().getActivities());
+		System.out.println("Label: " + application.getLabel());
 		
-		for (Iterator<ActivityEntry> iterator = manifest.getApplication().getActivities().iterator(); iterator.hasNext();) {
+		System.out.println("Activities: " + application.getActivities());
+		
+		for (Iterator<ActivityEntry> iterator = application.getActivities().iterator(); iterator.hasNext();) {
 			ActivityEntry entry = (ActivityEntry) iterator.next();
 			System.out.println(entry.getName() + " - " + entry.getTheme());
 		}
+		
+		ActivityEntry act = application.getActivity("com.donvigo.androidmanifestparser.MainActivity");
+		System.out.println("Act is not null: " + act.getName());
+		
+		act = application.getActivity("com.donvigo.androidmanifestparser.ActivityNotExists");
+		System.out.println("Act IS NULL");
 		
 	}
 }

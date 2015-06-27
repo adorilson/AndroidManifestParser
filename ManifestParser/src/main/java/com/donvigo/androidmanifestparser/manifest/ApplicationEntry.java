@@ -4,6 +4,7 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -32,4 +33,16 @@ public class ApplicationEntry{
     public void setActivities(List<ActivityEntry> activities) {
         this.activities = activities;
     }
+    
+    public ActivityEntry getActivity(String name){
+		for (Iterator<ActivityEntry> iterator = activities.iterator(); iterator.hasNext();) {
+			ActivityEntry activityEntry = (ActivityEntry) iterator.next();
+			System.out.println(activityEntry.getName());
+			if (activityEntry.getName().equals(name)){
+				return activityEntry;
+			}
+		} 
+		
+		return null;
+	}
 }
