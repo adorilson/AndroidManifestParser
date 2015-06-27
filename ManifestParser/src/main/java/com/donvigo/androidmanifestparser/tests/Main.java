@@ -20,9 +20,9 @@ public class Main {
 			System.out.println("MinSdkVersion: " + manifest.getUsesSdk().getMinSdkVersion());
 			System.out.println("TargetSdkVersion: " + manifest.getUsesSdk().getTargetSdkVersion());
 		}
-		/*
-		System.out.println("Label: " + manifest.getApplication().getLabel());
 		
+		System.out.println("Label: " + manifest.getApplication().getLabel());
+		/*
 		System.out.println("Activities: " + manifest.getApplication().getActivities());
 		
 		for (Iterator<ActivityEntry> iterator = manifest.getApplication().getActivities().iterator(); iterator.hasNext();) {
