@@ -13,6 +13,8 @@ import java.util.List;
 public class ActivityEntry{
     @Attribute(name = "name", required = false)
     private String name;
+    @Attribute(name = "theme", required = false)
+    private String theme;
     @Attribute(name = "excludeFromRecents", required = false)
     private String excludedFromRecents;
     @ElementList(entry = "intent-filter", inline = true, required = false)
@@ -26,7 +28,15 @@ public class ActivityEntry{
         this.name = name;
     }
 
-    public String getExcludedFromRecents() {
+    public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
+	public String getExcludedFromRecents() {
         return excludedFromRecents;
     }
 

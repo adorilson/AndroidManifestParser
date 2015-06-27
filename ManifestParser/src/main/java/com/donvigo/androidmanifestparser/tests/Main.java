@@ -22,14 +22,13 @@ public class Main {
 		}
 		
 		System.out.println("Label: " + manifest.getApplication().getLabel());
-		/*
+		
 		System.out.println("Activities: " + manifest.getApplication().getActivities());
 		
 		for (Iterator<ActivityEntry> iterator = manifest.getApplication().getActivities().iterator(); iterator.hasNext();) {
 			ActivityEntry entry = (ActivityEntry) iterator.next();
 			System.out.println(entry.getName() + " - " + entry.getTheme());
-			
 		}
-		*/
+		
 	}
 }
